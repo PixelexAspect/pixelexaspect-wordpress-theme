@@ -1,0 +1,43 @@
+#!/bin/bash
+set -e
+
+# Link:  https://tuhrig.de/how-to-know-you-are-inside-a-docker-container/
+function isRunningInsideContainer() {
+    awk -F/ '$2 == "docker"' /proc/self/cgroup >/dev/null 2>&1 | read
+}
+
+case $1 in
+
+down)
+    docker-compose down
+    ;;
+
+destroy)
+    docker-compose down -v
+    ;;
+
+in)
+    docker-compose exec wordpress /bin/bash
+    ;;
+
+logs)
+    docker-compose logs
+    ;;
+
+composer)
+    command="cd wp-content/themes/custom && composer ${@:2}"
+
+    if isRunningInsideContainer; then
+        cd wp-content/themes/custom && composer ${command}
+    else
+        docker-compose run --rm wordpress /bin/bash -c "${command}"
+    fi
+    ;;
+
+*)
+    docker-compose up --build -d
+    ;;
+
+esac
+
+exit 0
