@@ -1,9 +1,9 @@
 wp-content/themes/*
 !wp-content/themes/custom
-wp-content/themes/custom/vendor
 
 wp-content/plugins/*
 !wp-content/plugins/custom-pixelex-aspect
+wp-content/plugins/custom-pixelex-aspect/vendor
 
 wp-includes
 
