@@ -6,6 +6,8 @@ wp-content/plugins/*
 !wp-content/plugins/custom-pixelex-aspect
 wp-content/plugins/custom-pixelex-aspect/vendor
 
+wp-content/uploads
+
 wp-includes
 
 wp-admin

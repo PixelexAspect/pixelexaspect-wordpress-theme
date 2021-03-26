@@ -1,4 +1,8 @@
-<?php get_header();
+<?php
+
+use Uposcar\Pixelex\Util\AcfImage;
+
+get_header();
 if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <section class="relative grads-light-blue overflow-hidden">
@@ -66,7 +70,7 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
         </div>
     </section>
 
-    <section v-if="showVideo" class="plgutter-l prgutter-l h-100--nav mh-xxxlarge hauto-m mw-page mrauto mlauto">
+    <section class="plgutter-l prgutter-l h-100--nav mh-xxxlarge hauto-m mw-page mrauto mlauto">
         <div v-on:click="$store.commit('video/show', videoId)"
             class="bg-blue-dark pagutter h-100 relative df ai-c jc-c flexd-c">
             <img src="https://s3.eu-west-2.amazonaws.com/bignorth.production.kisumu-cms.pixelex/2018/06/study-room.jpg"
@@ -82,32 +86,31 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <div class="mw-page mlauto mrauto overflow-hidden plgutter-l prgutter-l mt3-l">
         <div v-if="camera" class="fl-ns w-50-ns w-third-l">
-            <nuxt-link class="db bg-blue-light-lc ar-4x3 h0 w-100 relative overflow-hidden" to="/rentals/camera">
+            <a class="db bg-blue-light-lc ar-4x3 h0 w-100 relative overflow-hidden" href="/rentals/camera">
                 <div class="b0 l0 w-100 mbm-darken mw-none gatsby-image-outer-wrapper" style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 100%;"></div>
-                        <img alt v-bind:src="camera.sizes.medium_large"
+                        <img
+                            alt="<?= AcfImage::instance()->alt('camera_image'); ?>"
+                            src="<?= AcfImage::instance()->url('camera_image'); ?>"
                             style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
-                        <no-ssr>
-                            <noscript>
-                                <img v-bind:src="camera.sizes.medium_large" alt
-                                    style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center">
-                            </noscript>
-                        </no-ssr>
+
                     </div>
                 </div>
                 <span class="absolute type-heading b2 f-medium lgutter action fw8">Rent cameras</span>
-            </nuxt-link>
+            </a>
         </div>
         <div v-if="lens" class="fl-ns w-50-ns w-third-l">
-            <nuxt-link class="db bg-blue-vlight ar-4x3 h0 w-100 relative overflow-hidden" to="/rentals/lens">
+            <a class="db bg-blue-vlight ar-4x3 h0 w-100 relative overflow-hidden" href="/rentals/lens">
                 <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-outer-wrapper"
                     style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 100%;"></div>
-                        <img alt v-bind:src="lens.sizes.medium_large"
+                        <img
+                            alt="<?= AcfImage::instance()->alt('lens_image'); ?>"
+                            src="<?= AcfImage::instance()->url('lens_image', 'medium_large'); ?>"
                             style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
                         <no-ssr>
                             <noscript>
@@ -118,84 +121,74 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                     </div>
                 </div>
                 <span class="absolute type-heading b2 f-medium lgutter action fw8">Rent lenses</span>
-            </nuxt-link>
+            </a>
         </div>
         <div v-if="sound" class="fl-ns w-50-ns w-third-l">
-            <nuxt-link
+            <a
                 class="db bg-blue-light-lc bg-blue-vlight-ns bg-blue-light-lc-l ar-4x3 h0 w-100 relative overflow-hidden"
-                to="/rentals/sound">
+                href="/rentals/sound">
                 <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-outer-wrapper"
                     style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 75%;"></div>
-                        <img alt v-bind:src="sound.sizes.medium_large"
+                        <img
+                            alt="<?= AcfImage::instance()->alt('sound_image'); ?>"
+                            src="<?= AcfImage::instance()->url('sound_image', 'medium_large'); ?>"
                             style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
-                        <no-ssr>
-                            <noscript>
-                                <img v-bind:src="sound.sizes.medium_large" alt
-                                    style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center">
-                            </noscript>
-                        </no-ssr>
                     </div>
                 </div>
                 <span class="absolute type-heading b2 f-medium lgutter action fw8">Rent audio</span>
-            </nuxt-link>
+            </a>
         </div>
         <div class="fl-ns w-50-ns w-third-l">
-            <nuxt-link
+            <a
                 class="db bg-blue-vlight bg-blue-light-lc-ns bg-blue-vlight-l ar-4x3 h0 w-100 relative overflow-hidden"
-                to="/rentals/light">
+                href="/rentals/light">
                 <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-outer-wrapper"
                     style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 75%;"></div>
-                        <img alt v-bind:src="light.sizes.medium_large"
-                            style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
+                        <img
 
-                        <no-ssr>
-                            <noscript>
-                                <img v-bind:src="light.sizes.medium_large" alt
-                                    style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center">
-                            </noscript>
-                        </no-ssr>
+                            alt="<?= AcfImage::instance()->alt('lights_image'); ?>"
+                            src="<?= AcfImage::instance()->url('lights_image', 'medium_large'); ?>"
+                            style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
                     </div>
                 </div>
                 <span class="absolute type-heading b2 f-medium lgutter action fw8">Rent lights</span>
-            </nuxt-link>
+            </a>
         </div>
         <div class="fl-ns w-50-ns w-third-l">
-            <nuxt-link class="db bg-blue-light-lc ar-4x3 h0 w-100 relative overflow-hidden" to="/rentals/accessory">
+            <a class="db bg-blue-light-lc ar-4x3 h0 w-100 relative overflow-hidden" href="/rentals/accessory">
                 <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-outer-wrapper"
                     style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 56.25%;"></div>
-                        <img alt v-bind:src="accessories.sizes.medium_large"
+                        <img
+                            alt="<?= AcfImage::instance()->alt('accessories_image'); ?>"
+                            src="<?= AcfImage::instance()->url('accessories_image', 'medium_large'); ?>"
                             style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
-                        <no-ssr>
-                            <noscript>
-                                <img v-bind:src="accessories.sizes.medium_large" alt
-                                    style="position:absolute;top:0;left:0;transition:opacity 0.5s;transition-delay:0.5s;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center">
-                            </noscript>
-                        </no-ssr>
                     </div>
                 </div>
-                <span to="/" class="absolute type-heading b2 f-medium lgutter action fw8">Rent
+                <span href="/" class="absolute type-heading b2 f-medium lgutter action fw8">Rent
                     accessories</span>
-            </nuxt-link>
+            </a>
         </div>
         <div class="fl-ns w-50-ns w-third-l">
-            <nuxt-link
+            <a
                 class="db bg-blue-vlight bg-blue-vlight-ns bg-blue-vlight-l ar-4x3 h0 w-100 relative overflow-hidden"
-                to="/sales">
+                href="/sales">
                 <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-outer-wrapper"
                     style="position: initial;">
                     <div class="absolute obj-cov b0 l0 w-100 h-100 mbm-darken mw-none gatsby-image-wrapper"
                         style="position: absolute; overflow: hidden;">
                         <div style="width: 100%; padding-bottom: 100%;"></div>
-                        <img alt v-bind:src="sales.sizes.medium_large"
+                        <img
+                            alt="<?= AcfImage::instance()->alt('sales_image'); ?>"
+                            src="<?= AcfImage::instance()->url('sales_image', 'medium_large'); ?>"
                             style="position: absolute; top: 0px; left: 0px; transition: opacity 0.5s ease 0s; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 1;">
                         <no-ssr>
                             <noscript>
@@ -205,8 +198,8 @@ if (have_posts()) : while (have_posts()) : the_post(); ?>
                         </no-ssr>
                     </div>
                 </div>
-                <span to="/" class="absolute type-heading b2 f-medium lgutter action fw8">Sales</span>
-            </nuxt-link>
+                <span href="/" class="absolute type-heading b2 f-medium lgutter action fw8">Sales</span>
+            </a>
         </div>
     </div>
 
