@@ -1,0 +1,35 @@
+/**
+ * Overrideable configurations
+ */
+@import 'config/breakpoints';
+@import 'config/sizes';
+
+/**
+ * Preonize function
+ */
+@import 'functions/preonize';
+
+/**
+ * Functional styles
+ */
+@import 'preons/colors';
+@import 'preons/css-grids';
+@import 'preons/display';
+@import 'preons/spacings';
+@import 'preons/sizes';
+@import 'preons/typography';
+@import 'preons/aspect-ratios';
+@import 'preons/positions';
+@import 'preons/flex';
+@import 'preons/alignment';
+@import 'preons/borders';
+@import 'preons/gradients';
+@import 'preons/z-index';
+@import 'preons/overflow';
+@import 'preons/opacity';
+@import 'preons/transforms';
+@import 'preons/object-fit';
+@import 'preons/mix-blend-modes';
+@import 'preons/box-shadow';
+@import 'preons/float';
+@import 'preons/cursor';

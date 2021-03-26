@@ -26,12 +26,12 @@ logs)
 
 composer)
     command="cd wp-content/plugins/custom-pixelex-aspect && composer ${@:2}"
+    docker-compose run --rm wordpress /bin/bash -c "${command}"
+    ;;
 
-    if [ isRunningInsideContainer ]; then
-        ${command}
-    else
-        docker-compose run --rm wordpress /bin/bash -c "${command}"
-    fi
+npm)
+    command="cd wp-content/themes/custom && npm ${@:2}"
+    docker-compose run --rm wordpress /bin/bash -c "${command}"
     ;;
 
 *)

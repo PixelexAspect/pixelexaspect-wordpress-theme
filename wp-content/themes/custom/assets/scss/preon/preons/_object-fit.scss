@@ -1,0 +1,6 @@
+$object-fit: (
+    cov: cover,
+    con: contain
+);
+
+@include preonize('obj-', object-fit, $object-fit, $breakpoints);

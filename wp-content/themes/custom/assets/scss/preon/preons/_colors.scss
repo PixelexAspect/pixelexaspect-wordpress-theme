@@ -1,0 +1,34 @@
+$colors: (
+    black-50: rgba(0, 0, 0, .5),
+    black-80: rgba(0, 0, 0, .8),
+    black-90: rgba(0, 0, 0, .9),
+
+    blue-vlight: #fbfcff,
+    blue-light-lc: #ced4e2,
+    blue-light: #eff1f5,
+
+    blue-primary-xlight: #6883b9,
+    blue-primary-light: #3c77ec,
+    blue-primary: #3c6b9e,
+    
+    blue-dark: #4c6077,
+    blue-dark-lc: #323948,
+    blue-vdark: #2d2f35,
+
+    error: #f97323,
+    success: #3fad44,
+
+    d-light: #a9a9a9,
+    d-dark: #4b4b4c,
+
+    action: #fd3b6f,
+    action-light: #ff758d,
+    action-xlight: #ffbbc7,
+    action-xxlight: #ffe8ec,
+    action-dark: #d01c3a,
+    action-xdark: #92061d
+) !default;
+
+@include preonize("bg-", background-color, $colors, $breakpoints);
+@include preonize("fill-", fill, $colors, $breakpoints);
+@include preonize("", color, $colors, $breakpoints);

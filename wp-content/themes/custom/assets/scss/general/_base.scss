@@ -1,0 +1,28 @@
+html {
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+        font-size: 67.5%;
+    }
+    @media screen and (min-width: 1300px) {
+        font-size: 72%;
+    }
+}
+
+body {
+    background-color: map-get($colors, 'blue-light');
+    height: 100%;
+    font-family: 'Brawler', serif;
+    font-size: 1.6rem;
+    line-height: 3 * .9rem;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+#___gatsby {
+    height: 100%;
+}

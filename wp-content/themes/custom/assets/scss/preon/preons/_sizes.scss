@@ -1,0 +1,66 @@
+$size: (
+    0: 0,
+    1: 1rem,
+    2: 2rem,
+    3: 3rem,
+    4: 4rem,
+    5: 5rem,
+    6: 6rem,
+    7: 7rem,
+    8: 8rem,
+    9: 9rem,
+    10: 10rem,
+    '1b': $base * 1,
+    '2b': $base * 2,
+    '3b': $base * 3,
+    '4b': $base * 4,
+    '5b': $base * 5,
+    xthin: .1rem,
+    thin: .2rem,
+    xtiny: .3rem,
+    tiny: .5rem,
+    medium: 16rem,
+    large: 22rem,
+    xlarge: 30rem,
+    '-120': 120%,
+    '-110': 110%,
+    '-100': 100%,
+    '-80': 80%,
+    '-75': 75%,
+    '-70': 70%,
+    '-two-thirds': (100% * 2 / 3),
+    '-60': 60%,
+    '-50': 50%,
+    '-50g': calc(50% - #{$gutter / 2}),
+    '-40': 40%,
+    '-third': (100% / 3),
+    '-thirdg': calc((100% / 3) - #{$gutter / 3}),
+    '-30': 30%,
+    '-25': 25%,
+    '-20': 20%,
+    '-10': 10%,
+    '-5': 5%,
+    '-nav': 4.9rem,
+    '-100--nav': calc(100% - 4.9rem)
+) !default;
+
+$max: (
+    '100': 100%,
+    '80': 80%,
+    '60': 60%,
+    'none': none,
+    'small': 14rem,
+    'medium': 22rem,
+    'large': 30rem,
+    'xlarge': 35rem,
+    'xxlarge': 40rem,
+    'xxxlarge': 48rem,
+    'super': 64rem,
+    'page': 120rem
+);
+
+@include preonize("w", width, $size, $breakpoints);
+@include preonize("h", height, $size, $breakpoints);
+@include preonize("mw-", max-width, $max, $breakpoints);
+@include preonize("mh-", max-height, $max, $breakpoints);
+@include preonize("minh-", min-height, $max, $breakpoints);

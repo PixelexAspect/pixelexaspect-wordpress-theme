@@ -1,0 +1,7 @@
+$positions: (
+    absolute: absolute,
+    relative: relative,
+    fixed: fixed
+) !default;
+
+@include preonize("", position, $positions, $breakpoints);

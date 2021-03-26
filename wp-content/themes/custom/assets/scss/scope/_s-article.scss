@@ -1,0 +1,45 @@
+.s-article {
+
+    @extend .blue-dark;
+    @extend .f-base;
+
+    h1 {
+        @extend .f-large;
+        @extend .f-xlarge-ns;
+        @extend .mb4;
+        @extend .lh4;
+    }
+
+    h2 {
+        @extend .f-medium;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        @extend .type-heading;
+        @extend .fw8;
+    }
+
+    p,
+    h2,
+    h3,
+    h4,
+    ul {
+        @extend .mb3;
+        @extend .mb2-m;
+    }
+
+    p {
+        @extend .lh3;
+    }
+
+    a {
+        @extend .action;
+    }
+
+    &--small {
+        font-size: 1.6rem;
+    }
+}

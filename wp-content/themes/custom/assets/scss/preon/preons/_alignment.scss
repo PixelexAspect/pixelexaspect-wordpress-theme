@@ -1,0 +1,16 @@
+$text-alignment: (
+    c: center,
+    r: right,
+    l: left,
+    j: justify
+);
+
+$justify-content: (
+    'sb': space-between,
+    'fe': flex-end,
+    'fs': flex-start,
+    's': stretch
+);
+
+@include preonize("t", text-align, $text-alignment, $breakpoints);
+@include preonize("jc-", justify-content, $justify-content, $breakpoints);

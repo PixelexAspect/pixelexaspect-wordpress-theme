@@ -1,0 +1,12 @@
+$displays: (
+    b: block,
+    ib: inline-block,
+    i: inline,
+    t: table,
+    g: grid,
+    tr: table-row,
+    f: flex,
+    n: none
+) !default;
+
+@include preonize("d", display, $displays, $breakpoints);

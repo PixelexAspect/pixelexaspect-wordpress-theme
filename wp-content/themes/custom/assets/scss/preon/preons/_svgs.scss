@@ -1,0 +1,4 @@
+@function pixels() {
+    @return '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 200 200"><rect x="0" y="100" rx="0" ry="0" width="100" height="100" fill="navy" /><rect x="100" y="0" rx="0" ry="0" width="100" height="100" fill="navy" /><rect x="100" y="100" rx="0" ry="0" width="100" height="100" fill="royalblue" /></svg>';
+}
+

@@ -1,0 +1,7 @@
+$transforms: (
+    rotate-235: rotate(235deg),
+    rotate-315: rotate(315deg),
+    translate-y--50: translateY(-50%)
+);
+
+@include preonize("trans-", transform, $transforms, $breakpoints);

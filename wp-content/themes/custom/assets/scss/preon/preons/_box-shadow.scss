@@ -1,0 +1,5 @@
+$box-shadow: (
+    default: 0px 0px 2px 0px map-get($colors, 'blue-dark')
+);
+
+@include preonize('bxs-', box-shadow, $box-shadow, $breakpoints);

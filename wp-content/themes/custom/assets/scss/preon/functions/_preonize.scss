@@ -1,0 +1,18 @@
+@mixin preonize($name, $prop, $map, $breakpoints) {
+
+    @each $label, $value in $map {
+        .#{$name}#{$label} {
+            #{$prop}: $value;
+        }
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media #{$breakpoint-value} {
+            @each $label, $value in $map {
+                .#{$name}#{$label}-#{$breakpoint} {
+                    #{$prop}: $value;
+                }
+            }
+        }
+    }
+}

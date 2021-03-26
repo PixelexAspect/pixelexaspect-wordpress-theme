@@ -1,0 +1,18 @@
+$border-widths: (
+    0: 0,
+    1: 1px,
+    2: 2px,
+    3: 3px
+);
+
+$border-styles: (
+    s: solid
+);
+
+@include preonize("ba", border-width, $border-widths, $breakpoints);
+@include preonize("bb", border-bottom, $border-widths, $breakpoints);
+@include preonize("bl", border-left, $border-widths, $breakpoints);
+@include preonize("bt", border-top, $border-widths, $breakpoints);
+@include preonize("br", border-right, $border-widths, $breakpoints);
+@include preonize("bc-", border-color, $colors, $breakpoints);
+@include preonize("bs-", border-style, $border-styles, $breakpoints);

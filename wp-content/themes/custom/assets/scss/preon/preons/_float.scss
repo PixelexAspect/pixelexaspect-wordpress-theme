@@ -1,0 +1,7 @@
+$float: (
+    l: left,
+    r: right,
+    n: none
+);
+
+@include preonize('f', float, $float, $breakpoints);

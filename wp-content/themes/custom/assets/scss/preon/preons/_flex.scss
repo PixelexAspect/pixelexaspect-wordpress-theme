@@ -1,0 +1,14 @@
+$flex-direction: (
+    c: column,
+    r: row,
+    creverse: column-reverse,
+    rreverse: row-reverse
+);
+
+$flex-wrap: (
+    n: nowrap,
+    w: wrap
+);
+
+@include preonize('flexd-', flex-direction, $flex-direction, $breakpoints);
+@include preonize('flexw-', flex-wrap, $flex-wrap, $breakpoints);

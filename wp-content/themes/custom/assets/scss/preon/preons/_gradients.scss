@@ -1,0 +1,5 @@
+$gradients: (
+    'light-blue': linear-gradient(-211deg, rgb(248, 249, 251), #e9ecf5 50%, rgb(251, 252, 255) 100%)
+);
+
+@include preonize('grads-', 'background-image', $gradients, $breakpoints);

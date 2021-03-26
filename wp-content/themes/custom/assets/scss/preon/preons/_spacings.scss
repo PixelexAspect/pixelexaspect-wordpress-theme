@@ -1,0 +1,59 @@
+$m: (
+  -n-xthin: -.1rem,
+  -n-thin: -.2rem,
+  -n-xtiny: -.3rem,
+  -n-tiny: -.5rem,
+  xthin: .1rem,
+  thin: .2rem,
+  xtiny: .3rem,
+  tiny: .5rem,
+  '-n-1': $base * -1,
+  '-n-2': $base * -2,
+  auto: auto,
+  0: 0,
+  1: $base * 1,
+  2: $base * 2,
+  3: $base * 3,
+  4: $base * 4,
+  5: $base * 5,
+  6: $base * 6,
+  7: $base * 7,
+  8: $base * 8,
+  9: $base * 9,
+  10: $base * 10,
+  "small": $base * .5,
+  "large": 14rem,
+  "xlarge": 20rem,
+  "gutter": $gutter,
+  "g": $gutter,
+  "g--h": ($gutter / 2),
+  '-100': 100%,
+  '-80': 80%,
+  '-75': 75%,
+  '-60': 60%,
+  '-50': 50%,
+  '-40': 40%,
+  '-30': 30%,
+  '-25': 25%,
+  '-20': 20%,
+  '-10': 10%,
+  '-5': 5%,
+  '-nav': 4.9rem
+) !default;
+
+@include preonize("ma", margin, $m, $breakpoints);
+@include preonize("mr", margin-right, $m, $breakpoints);
+@include preonize("ml", margin-left, $m, $breakpoints);
+@include preonize("mt", margin-top, $m, $breakpoints);
+@include preonize("mb", margin-bottom, $m, $breakpoints);
+
+@include preonize("pa", padding, $m, $breakpoints);
+@include preonize("pr", padding-right, $m, $breakpoints);
+@include preonize("pl", padding-left, $m, $breakpoints);
+@include preonize("pt", padding-top, $m, $breakpoints);
+@include preonize("pb", padding-bottom, $m, $breakpoints);
+
+@include preonize("t", top, $m, $breakpoints);
+@include preonize("l", left, $m, $breakpoints);
+@include preonize("r", right, $m, $breakpoints);
+@include preonize("b", bottom, $m, $breakpoints);

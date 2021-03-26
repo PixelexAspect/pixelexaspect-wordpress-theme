@@ -1,0 +1,30 @@
+.pixel {
+    @extend .absolute;
+    @extend .z0;
+    @extend .r0;
+    @extend .t-40;
+    @extend .op10;
+    @extend .trans-rotate-315;
+
+    &-big {
+        @extend .absolute;
+        @extend .z0;
+        @extend .r0;
+        @extend .t-20;
+        @extend .op20;
+        height: 500px;
+        transform: rotate(-243deg);
+        width: 500px;
+    }
+
+    &-super {
+        @extend .absolute;
+        @extend .z0;
+        @extend .op20;
+        height: 300px;
+        transform: rotate(-33deg);
+        width: 300px;
+        right: 37%;
+        top: -2%;
+    }
+}

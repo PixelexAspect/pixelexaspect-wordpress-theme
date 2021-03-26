@@ -1,0 +1,7 @@
+$overflow: (
+    auto: auto,
+    scroll: scroll,
+    hidden: hidden
+);
+
+@include preonize("overflow-", overflow, $overflow, $breakpoints);

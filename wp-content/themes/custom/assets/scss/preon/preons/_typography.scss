@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial|Brawler');
+
+$base: .9rem !default;
+
+$families: ('heading': #{"'Questrial', sans-serif"},
+'body': #{"'Brawler', serif"});
+
+$sizes: (small: 1.2rem,
+default: 1.6rem,
+base: 1.9rem,
+medium: 2.4rem,
+large: 2.8rem,
+xlarge: 3.5rem,
+xxlarge: 5.2rem);
+
+$weights: (1: 100,
+2: 200,
+3: 300,
+4: 400,
+5: 500,
+6: 600,
+7: 700,
+8: 800,
+9: 900);
+
+$line-heights: (1: 1 * $base,
+2: 2 * $base,
+3: 3 * $base,
+4: 4 * $base,
+5: 5 * $base,
+1r: 1rem,
+2r: 2rem,
+3r: 3rem,
+4r: 4rem,
+5r: 5rem);
+
+$letter-spacings: (1: 1px,
+2: 2px,
+3: 3px,
+'-small': 0.03em,
+'-medium': 0.1em,
+'-large': 0.2em);
+
+@include preonize("type-", font-family, $families, $breakpoints);
+@include preonize("f-", font-size, $sizes, $breakpoints);
+@include preonize("fw", font-weight, $weights, $breakpoints);
+@include preonize("lh", line-height, $line-heights, $breakpoints);
+@include preonize("ls", letter-spacing, $letter-spacings, $breakpoints);

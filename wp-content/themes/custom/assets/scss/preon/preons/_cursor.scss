@@ -1,0 +1,5 @@
+$cursor: (
+    'p': pointer
+);
+
+@include preonize('cursor-', cursor, $cursor, $breakpoints);

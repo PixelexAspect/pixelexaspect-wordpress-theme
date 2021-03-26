@@ -1,0 +1,6 @@
+$mix-blend-modes: (
+    luminosity: luminosity,
+    darken: darken
+);
+
+@include preonize('mbm-', mix-blend-mode, $mix-blend-modes, $breakpoints);
