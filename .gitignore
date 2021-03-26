@@ -1,5 +1,6 @@
 wp-content/themes/*
 !wp-content/themes/custom
+wp-content/themes/custom/dist
 
 wp-content/plugins/*
 !wp-content/plugins/custom-pixelex-aspect
@@ -8,6 +9,8 @@ wp-content/plugins/custom-pixelex-aspect/vendor
 wp-includes
 
 wp-admin
+
+*node_modules*
 
 wp-*.php
 xmlrpc.php
