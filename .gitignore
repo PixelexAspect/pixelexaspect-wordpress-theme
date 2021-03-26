@@ -3,7 +3,7 @@ wp-content/themes/*
 wp-content/themes/custom/vendor
 
 wp-content/plugins/*
-!wp-content/plugins/custom
+!wp-content/plugins/custom-pixelex-aspect
 
 wp-includes
 

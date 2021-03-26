@@ -15,6 +15,10 @@ final class Brand
             'author'
         ]);
 
+        $brand->options([
+            'hierarchical' => true
+        ]);
+
         $brand->icon('dashicons-book');
 
         $brand->register();

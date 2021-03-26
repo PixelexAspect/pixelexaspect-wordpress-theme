@@ -44,4 +44,30 @@ add_filter('auto_update_theme', '__return_false');
 */
 
 (new \Uposcar\Pixelex\PostTypes\Brand)->init();
+(new \Uposcar\Pixelex\PostTypes\PageType)->init();
 (new \Uposcar\Pixelex\PostTypes\Rental)->init();
+
+
+/*
+|--------------------------------------------------------------------------
+| ACF Config
+|--------------------------------------------------------------------------
+|
+| Load ACF Configs in
+|
+*/
+
+use Dennykuo\Config\Config;
+
+$acfRules = Config::instance(__DIR__ . '/config')->get('acf');
+
+foreach ($acfRules as $rule) {
+    if (function_exists('acf_add_local_field_group')) {
+        acf_add_local_field_group($rule);
+    }
+}
+
+// echo "<pre>";
+// var_dump($acfRules);
+
+// exit;
