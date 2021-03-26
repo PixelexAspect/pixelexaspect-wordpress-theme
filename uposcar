@@ -27,7 +27,7 @@ logs)
 composer)
     command="cd wp-content/themes/custom && composer ${@:2}"
 
-    if isRunningInsideContainer; then
+    if [isRunningInsideContainer]; then
         cd wp-content/themes/custom && composer ${command}
     else
         docker-compose run --rm wordpress /bin/bash -c "${command}"

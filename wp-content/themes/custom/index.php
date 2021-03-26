@@ -1,21 +1,3 @@
-<?php
-
-/*
-|--------------------------------------------------------------------------
-| Autoload composer dependencies
-|--------------------------------------------------------------------------
-|
-| While WordPress is not installable via Composer, having composer makes
-| the development far easier. It's recommended to not have composer vendor
-| files inside version control but use continuous integration to build
-| a complete theme with composer installed by default
-|
-*/
-
-require __DIR__ . '/vendor/autoload.php';
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

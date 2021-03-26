@@ -1,1 +1,17 @@
+wp-content/themes/*
+!wp-content/themes/custom
 wp-content/themes/custom/vendor
+
+wp-content/plugins/*
+!wp-content/plugins/custom
+
+wp-includes
+
+wp-admin
+
+wp-*.php
+xmlrpc.php
+index.php
+*.txt
+*.html
+*.htaccess

@@ -1,14 +1,19 @@
 {
-    "name": "uposcar/pixelexaspect",
-    "type": "project",
-    "license": "Copyright",
-    "authors": [
-        {
-            "name": "Gemma Black",
-            "email": "gblackuk@googlemail.com"
-        }
-    ],
-    "require": {
-        "jjgrainger/posttypes": "^2.1"
+  "name": "uposcar/pixelexaspect",
+  "type": "project",
+  "license": "Copyright",
+  "authors": [
+    {
+      "name": "Gemma Black",
+      "email": "gblackuk@googlemail.com"
     }
+  ],
+  "require": {
+    "jjgrainger/posttypes": "^2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Uposcar\\Pixelex\\": "src"
+    }
+  }
 }
